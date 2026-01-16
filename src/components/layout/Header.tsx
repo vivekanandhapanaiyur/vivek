@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -12,10 +13,11 @@ function cn(...inputs: ClassValue[]) {
 
 const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Programs', href: '#programs' },
-    { name: 'Admissions', href: '#admissions' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Programs', href: '/#programs' },
+    { name: 'Admissions', href: '/#admissions' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/#contact' },
 ]
 
 export default function Header() {
@@ -60,10 +62,16 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3 group">
                     <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        className="w-10 h-10 rounded-xl bg-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                        whileHover={{ scale: 1.05 }}
+                        className="relative w-12 h-12 flex items-center justify-center"
                     >
-                        V
+                        <Image
+                            src="/images/logo.png"
+                            alt="Vivekanandha School Logo"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
                     </motion.div>
                     <div className="flex flex-col">
                         <span className={cn(
@@ -90,8 +98,8 @@ export default function Header() {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full" />
                         </Link>
                     ))}
-                    <Link href="#contact" className="btn-premium py-2 px-6 text-sm group">
-                        Apply Now
+                    <Link href="/registration" className="btn-premium py-2 px-6 text-sm group">
+                        Registration Now
                     </Link>
                 </nav>
 

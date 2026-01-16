@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 
 const stats = [
     { label: 'Qualified Teachers', value: '25+', icon: '🎓' },
-    { label: 'Happy Students', value: '500+', icon: '😊' },
-    { label: 'Years of Excellence', value: '15+', icon: '⭐' },
-    { label: 'Awards Won', value: '50+', icon: '🏆' }
+    { label: 'Happy Students', value: '3000+', icon: '😊' },
+    { label: 'Years of Excellence', value: '30+', icon: '⭐' },
+    { label: 'Awards Won', value: '500+', icon: '🏆' }
 ]
 
 export default function Achievements() {

@@ -46,7 +46,7 @@ export default function CTA() {
                         transition={{ delay: 0.3 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     >
-                        <Link href="#contact" className="btn-premium px-12 py-5 bg-white text-primary-900 group">
+                        <Link href="/admission" className="btn-premium px-12 py-5 bg-white text-primary-900 group">
                             Apply Online Today
                         </Link>
                         <Link href="tel:+917708290080" className="btn-premium px-12 py-5 bg-primary-900/30 text-white border border-white/20 group">
