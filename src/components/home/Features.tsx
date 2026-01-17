@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
 import gsap from 'gsap'
 const features = [
     {
@@ -31,6 +32,14 @@ const features = [
         icon: '🛡️',
         color: 'bg-green-50',
         textColor: 'text-green-600'
+    },
+    {
+        title: 'About Our School',
+        description: 'Learn more about our legacy, mission, vision and leadership.',
+        icon: '🏫',
+        color: 'bg-purple-50',
+        textColor: 'text-purple-600',
+        href: '/about'
     }
 ]
 
@@ -78,12 +87,18 @@ export default function Features() {
                             {feature.description}
                         </p>
 
-                        <motion.div
-                            className="mt-8 w-12 h-1 bg-primary-100 rounded-full overflow-hidden"
-                            whileHover={{ width: '4rem' }}
-                        >
-                            <div className="w-full h-full bg-primary-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                        </motion.div>
+                        {feature.href ? (
+                            <Link href={feature.href} className="mt-8 inline-block text-primary-600 font-bold hover:gap-2 transition-all flex items-center gap-1 group/link">
+                                Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                            </Link>
+                        ) : (
+                            <motion.div
+                                className="mt-8 w-12 h-1 bg-primary-100 rounded-full overflow-hidden"
+                                whileHover={{ width: '4rem' }}
+                            >
+                                <div className="w-full h-full bg-primary-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                            </motion.div>
+                        )}
                     </motion.div>
                 ))}
             </div>
